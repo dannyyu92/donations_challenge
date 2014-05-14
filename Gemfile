@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'devise', '3.2.4'
 gem 'figaro'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'sqlite3'
@@ -11,6 +12,8 @@ group :development, :test do
   gem 'capybara'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'rails_layout'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
