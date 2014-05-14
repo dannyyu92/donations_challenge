@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'devise', '3.2.4'
+gem 'figaro'
 
 group :development, :test do
   gem 'sqlite3'
