@@ -4,6 +4,11 @@
 //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
 //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
 
+// Navbar overrides
+$navbar-height: 70px;
+$navbar-default-bg: #FFF;
+$navbar-margin-bottom: none;
+
 // import the CSS framework
 @import "bootstrap";
 
