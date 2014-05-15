@@ -1,5 +1,10 @@
 <h1>Donations</h1>
-<%= link_to "Add Item", new_user_item_path(current_user), class: "btn btn-default btn-md" %>
+<div class="pull-left">
+  <%= link_to "Add Item", new_user_item_path(current_user), class: "btn btn-default btn-md " %>
+  <%= link_to "Add Voucher", new_user_voucher_path(current_user), class: "btn btn-default btn-md" %>
+  <%= link_to "Add Experience", new_user_experience_path(current_user), class: "btn btn-default btn-md" %>
+</div>
+<div class="clearfix"></div>
 <h3>Items</h3>
 <% @items.each do |i| %>
   <p>
@@ -7,5 +12,12 @@
     Height: <%= i.height %><br />
     Width: <%= i.width %><br />
     Weight: <%= i.weight %><br />
+  </p>
+<% end %>
+<h3>Vouchers</h3>
+<% @vouchers.each do |v| %>
+  <p>
+    <%= v.donation.title %>: <%= v.donation.description %><br />
+    Expiration Date: <%= v.expiration_date %><br />
   </p>
 <% end %>

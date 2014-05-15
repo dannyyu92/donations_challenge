@@ -1,0 +1,24 @@
+<%= form_for [current_user, @voucher] do |f| %>
+  <% if @voucher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voucher.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @voucher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.fields_for(:donation) do |d| %>
+    <%= d.label :title %><br />
+    <%= d.text_field :title, placeholder: "Title", id: "voucher_title" %><br />
+    <%= d.label :description %><br />
+    <%= d.text_area :description, placeholder: "Description", id: "voucher_description" %><br />
+  <% end %>
+  <%= f.label :expiration_date %><br />
+  <%= f.datetime_select :expiration_date, id: "voucher_date" %><br />
+
+  <%= f.submit "Submit" %>
+<% end %>
