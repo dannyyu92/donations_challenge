@@ -1,1 +1,7 @@
 <h1>Donations index page</h1>
+<% @donations.each do |d| %>
+  <p>
+    <%= d.title %>: <%= d.description %>
+  </p>
+
+<% end %>

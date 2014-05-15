@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515003937) do
+ActiveRecord::Schema.define(version: 20140515011059) do
 
   create_table "donations", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140515003937) do
     t.datetime "updated_at"
     t.integer  "donatable_id"
     t.string   "donatable_type"
+    t.integer  "user_id"
   end
 
   create_table "experiences", force: true do |t|
