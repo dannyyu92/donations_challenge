@@ -21,3 +21,11 @@
     Expiration Date: <%= v.expiration_date %><br />
   </p>
 <% end %>
+<h3>Experiences</h3>
+<% @experiences.each do |e| %>
+  <p>
+    <%= e.donation.title %>: <%= e.donation.description %><br />
+    Primary Contact Name: <%= e.primary_contact_name %><br />
+    Latitude/Longitude: <%= e.latitude %>, <%= e.longitude %>
+  </p>
+<% end %>

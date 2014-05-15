@@ -1,0 +1,28 @@
+<%= form_for [current_user, @experience] do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @experience.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.fields_for(:donation) do |d| %>
+    <%= d.label :title %><br />
+    <%= d.text_field :title, placeholder: "Title", id: "experience_title" %><br />
+    <%= d.label :description %><br />
+    <%= d.text_area :description, placeholder: "Description", id: "experience_description" %><br />
+  <% end %>
+  <%= f.label :primary_contact_name %><br />
+  <%= f.text_field :primary_contact_name, placeholder: "Primary Contact Name", id: "experience_name" %><br />
+  <%= f.label :latitude %><br />
+  <%= f.number_field :latitude, placeholder: "Latitude", id: "experience_latitude", step: "any" %><br />
+  <%= f.label :longitude %><br />
+  <%= f.number_field :longitude, placeholder: "Longitude", id: "experience_longitude", step: "any" %><br />
+
+  <%= f.submit "Submit" %>
+<% end %>

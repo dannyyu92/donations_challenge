@@ -18,11 +18,11 @@
     <%= d.text_area :description, placeholder: "Description", id: "item_description" %><br />
   <% end %>
   <%= f.label :height %><br />
-  <%= f.number_field :height, placeholder: "Height", id: "item_height" %><br />
+  <%= f.number_field :height, placeholder: "Height", id: "item_height", step: "any" %><br />
   <%= f.label :width %><br />
-  <%= f.number_field :width, placeholder: "Width", id: "item_width" %><br />
+  <%= f.number_field :width, placeholder: "Width", id: "item_width", step: "any" %><br />
   <%= f.label :weight %><br />
-  <%= f.number_field :weight, placeholder: "Weight", id: "item_weight" %><br />
+  <%= f.number_field :weight, placeholder: "Weight", id: "item_weight", step: "any" %><br />
 
   <%= f.submit "Submit" %>
 <% end %>

@@ -4,6 +4,7 @@ class DonationsController < ApplicationController
   def index
     @items = Item.where(user_id: current_user.id).includes(:donation)
     @vouchers = Voucher.where(user_id: current_user.id).includes(:donation)
+    @experiences = Experience.where(user_id: current_user.id).includes(:donation)
   end
 
   def new
