@@ -1,4 +1,5 @@
 module DateTimeHelper
+#http://markgandolfo.com/blog/2013/11/17/date-and-time-helper-with-rspec-and-capybara/
   def select_date_and_time(date, options = {})
     field = options[:from]
     select date.strftime('%Y'), :from => "#{field}_1i" #year
