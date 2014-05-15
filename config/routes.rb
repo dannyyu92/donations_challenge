@@ -4,10 +4,10 @@ DonationsChallenge::Application.routes.draw do
   root "donations#index"
 
   resources :users do
-    resources :donations, except: [:show, :destroy]
-    resources :items
-    resources :vouchers
-    resources :experiences
+    resources :donations, only: [:index, :new, :create]
+    resources :items, only: [:index, :new, :create]
+    resources :vouchers, only: [:index, :new, :create]
+    resources :experiences, only: [:index, :new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

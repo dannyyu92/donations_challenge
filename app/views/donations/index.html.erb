@@ -5,27 +5,33 @@
   <%= link_to "Add Experience", new_user_experience_path(current_user), class: "btn btn-default btn-md" %>
 </div>
 <div class="clearfix"></div>
-<h3>Items</h3>
-<% @items.each do |i| %>
-  <p>
-    <%= i.donation.title %>: <%= i.donation.description %><br />
-    Height: <%= i.height %><br />
-    Width: <%= i.width %><br />
-    Weight: <%= i.weight %><br />
-  </p>
+<% unless @items.empty? %>
+  <h3>Items</h3>
+  <% @items.each do |i| %>
+    <p>
+      <%= i.donation.title %>: <%= i.donation.description %><br />
+      Height: <%= i.height %><br />
+      Width: <%= i.width %><br />
+      Weight: <%= i.weight %><br />
+    </p>
+  <% end %>
 <% end %>
-<h3>Vouchers</h3>
-<% @vouchers.each do |v| %>
-  <p>
-    <%= v.donation.title %>: <%= v.donation.description %><br />
-    Expiration Date: <%= v.expiration_date %><br />
-  </p>
+<% unless @vouchers.empty? %>
+  <h3>Vouchers</h3>
+  <% @vouchers.each do |v| %>
+    <p>
+      <%= v.donation.title %>: <%= v.donation.description %><br />
+      Expiration Date: <%= v.expiration_date %><br />
+    </p>
+  <% end %>
 <% end %>
-<h3>Experiences</h3>
-<% @experiences.each do |e| %>
-  <p>
-    <%= e.donation.title %>: <%= e.donation.description %><br />
-    Primary Contact Name: <%= e.primary_contact_name %><br />
-    Latitude/Longitude: <%= e.latitude %>, <%= e.longitude %>
-  </p>
+<% unless @experiences.empty? %>
+  <h3>Experiences</h3>
+  <% @experiences.each do |e| %>
+    <p>
+      <%= e.donation.title %>: <%= e.donation.description %><br />
+      Primary Contact Name: <%= e.primary_contact_name %><br />
+      Latitude/Longitude: <%= e.latitude %>, <%= e.longitude %>
+    </p>
+  <% end %>
 <% end %>

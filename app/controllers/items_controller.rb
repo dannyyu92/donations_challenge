@@ -10,14 +10,6 @@ class ItemsController < ApplicationController
     @item.build_donation(donatable_id: params[:id], donatable_type: "Item")
   end
 
-  def show
-    @item = Item.find(params[:id])
-  end
-
-  def edit
-    @item = Item.find(params[:id])
-  end
-
   def create
     @item = Item.new(item_params)
     set_user_id
@@ -26,22 +18,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-    @item = Item.find(params[:id])
-    set_user_id
-    if @item.update_attributes(item_params)
-      redirect_to @item, notice: "Successfully updated"
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to root_path, notice: "Successfully deleted"
   end
 
   private

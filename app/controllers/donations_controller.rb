@@ -11,10 +11,6 @@ class DonationsController < ApplicationController
     @donation = Donation.new
   end
 
-  def edit
-    @donation = Donation.find(params[:id])
-  end
-
   def create
     @donation = Donation.new(donation_params)
     set_user_id
@@ -22,16 +18,6 @@ class DonationsController < ApplicationController
       redirect_to root_path, notice: "Successfully created"
     else
       render :new
-    end
-  end
-
-  def update
-    @donation = Donation.find(params[:id])
-    set_user_id
-    if @donation.update_attributes(donation_params)
-      redirect_to @donation, notice: "Successfully updated"
-    else
-      render :edit
     end
   end
 

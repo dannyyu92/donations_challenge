@@ -10,14 +10,6 @@ class VouchersController < ApplicationController
     @voucher.build_donation(donatable_id: params[:id], donatable_type: "Voucher")
   end
 
-  def show
-    @voucher = Voucher.find(params[:id])
-  end
-
-  def edit
-    @voucher = Voucher.find(params[:id])
-  end
-
   def create
     @voucher = Voucher.new(voucher_params)
     set_user_id
@@ -26,22 +18,6 @@ class VouchersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-    @voucher = Voucher.find(params[:id])
-    set_user_id
-    if @voucher.update_attributes(voucher_params)
-      redirect_to @voucher, notice: "Successfully updated"
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @voucher = Voucher.find(params[:id])
-    @voucher.destroy
-    redirect_to root_path, notice: "Successfully deleted"
   end
 
   private

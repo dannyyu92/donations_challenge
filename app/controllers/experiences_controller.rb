@@ -10,14 +10,6 @@ class ExperiencesController < ApplicationController
     @experience.build_donation(donatable_id: params[:id], donatable_type: "Experience")
   end
 
-  def show
-    @experience = Experience.find(params[:id])
-  end
-
-  def edit
-    @experience = Experience.find(params[:id])
-  end
-
   def create
     @experience = Experience.new(experience_params)
     set_user_id
@@ -26,22 +18,6 @@ class ExperiencesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-    @experience = Experience.find(params[:id])
-    set_user_id
-    if @experience.update_attributes(experience_params)
-      redirect_to @experience, notice: "Successfully updated"
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @experience = Experience.find(params[:id])
-    @experience.destroy
-    redirect_to root_path, notice: "Successfully deleted"
   end
 
   private
