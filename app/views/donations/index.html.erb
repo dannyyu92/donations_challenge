@@ -1,7 +1,11 @@
-<h1>Donations index page</h1>
-<% @donations.each do |d| %>
+<h1>Donations</h1>
+<%= link_to "Add Item", new_user_item_path(current_user), class: "btn btn-default btn-md" %>
+<h3>Items</h3>
+<% @items.each do |i| %>
   <p>
-    <%= d.title %>: <%= d.description %>
+    <%= i.donation.title %>: <%= i.donation.description %><br />
+    Height: <%= i.height %><br />
+    Width: <%= i.width %><br />
+    Weight: <%= i.weight %><br />
   </p>
-
 <% end %>

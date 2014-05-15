@@ -1,0 +1,28 @@
+<%= form_for [current_user, @item] do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.fields_for(:donation) do |d| %>
+    <%= d.label :title %><br />
+    <%= d.text_field :title, placeholder: "Title", id: "item_title" %><br />
+    <%= d.label :description %><br />
+    <%= d.text_area :description, placeholder: "Description", id: "item_description" %><br />
+  <% end %>
+  <%= f.label :height %><br />
+  <%= f.number_field :height, placeholder: "Height", id: "item_height" %><br />
+  <%= f.label :width %><br />
+  <%= f.number_field :width, placeholder: "Width", id: "item_width" %><br />
+  <%= f.label :weight %><br />
+  <%= f.number_field :weight, placeholder: "Weight", id: "item_weight" %><br />
+
+  <%= f.submit "Submit" %>
+<% end %>

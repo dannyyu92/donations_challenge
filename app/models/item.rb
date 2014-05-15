@@ -1,5 +1,7 @@
 class Item < ActiveRecord::Base
-  has_many :donations, as: :donatable
+  has_one :donation, as: :donatable, dependent: :destroy
+  accepts_nested_attributes_for :donation
+
 
   validates :height, presence: true
   validates :width, presence: true

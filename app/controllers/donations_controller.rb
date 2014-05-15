@@ -2,15 +2,11 @@ class DonationsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @donations = Donation.where(user_id: current_user.id)
+    @items = Item.where(user_id: current_user.id)
   end
 
   def new
     @donation = Donation.new
-  end
-
-  def show
-    @donation = Donation.find(params[:id])
   end
 
   def edit
@@ -35,12 +31,6 @@ class DonationsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @donation = Donation.find(params[:id])
-    @donation.destroy
-    redirect_to root_path, notice: "Successfully deleted"
   end
 
   private
