@@ -5,5 +5,5 @@ Donations Challenge
 
 
 For an account with seed data:
-Username: admin@example.com
+Username: user@example.com
 Password: password
