@@ -17,6 +17,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'simplecov', '~> 0.7.1', require: false
 end
 
 group :production do
