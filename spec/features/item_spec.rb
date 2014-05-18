@@ -5,9 +5,6 @@ describe "Item" do
     before :each do
       @user = FactoryGirl.create(:user)
       login_as @user, scope: :user
-    end
-
-    before :each do
       visit new_user_item_path(@user)
       @item = Item.new(height: 100.1, width: 200.5, weight: 130.11)
       @donation = Donation.new(title: "A title", description: "Some descrip")

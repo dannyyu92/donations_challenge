@@ -68,6 +68,9 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -171,6 +174,7 @@ DEPENDENCIES
   devise (= 3.2.4)
   factory_girl_rails
   figaro
+  gon
   jbuilder (~> 1.2)
   jquery-rails
   quiet_assets

@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'devise', '3.2.4'
 gem 'figaro'
 gem 'bootstrap-sass'
+gem 'gon'
 
 group :development, :test do
   gem 'sqlite3'

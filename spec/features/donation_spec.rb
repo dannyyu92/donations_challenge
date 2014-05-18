@@ -5,9 +5,6 @@ describe "Donation" do
     before :each do
       @user = FactoryGirl.create(:user)
       login_as @user, scope: :user
-    end
-
-    before :each do
       visit new_user_donation_path(@user)
       @donation = Donation.new(title: "A Title", description: "This is a descrip.")
     end

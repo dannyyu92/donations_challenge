@@ -54,3 +54,21 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+/*=== CUSTOM ===*/
+
+// Google Maps
+#map-canvas {
+  height: 500px;
+  margin-bottom: 50px;
+  width: 100%;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  img {
+    max-width: none;
+  }
+  label {
+    width: auto;
+    display: inline;
+  }
+}

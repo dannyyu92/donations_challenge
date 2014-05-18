@@ -34,4 +34,11 @@
       Latitude/Longitude: <%= e.latitude %>, <%= e.longitude %>
     </p>
   <% end %>
+  <div id="map-canvas"></div>
 <% end %>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" %>
+<%= javascript_tag do %>
+  initialize_maps();
+<% end %>
+

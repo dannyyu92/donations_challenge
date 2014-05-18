@@ -5,9 +5,6 @@ describe "Experience" do
     before :each do
       @user = FactoryGirl.create(:user)
       login_as @user, scope: :user
-    end
-
-    before :each do
       visit new_user_experience_path(@user)
       @experience = Experience.new(primary_contact_name: "John Doe", latitude: "40.7527987", longitude: "-73.974788")
       @donation = Donation.new(title: "A title", description: "Some descrip")
